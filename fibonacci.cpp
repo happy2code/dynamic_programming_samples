@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <sstream>
 
 using namespace std;
 
@@ -18,9 +19,20 @@ unsigned long fibonacci(unsigned int number)
 }
 
 //0 1 1 2 3 5 8 13 21 34 55 ...
-int main()
+int main(int argc , char** args)
 {
-    cout<< "25th fobonacci number is " << fibonacci(25) <<endl;
+    if(argc < 2) {
+        cout << "Pass atleast one argument, N";
+        return -1;
+    }
+
+    stringstream ss;
+    ss << args[1];
+
+    unsigned long input_number;
+    ss >> input_number;
+
+    cout<< input_number << "th fobonacci number is " << fibonacci(input_number) <<endl;
     for(auto item : counter){
         cout << "Fibonacchi of " << item.first << " is called " << item.second << " times" << endl;
     }

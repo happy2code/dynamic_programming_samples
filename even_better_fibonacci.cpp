@@ -19,10 +19,9 @@ unsigned long fibonacci(unsigned int number)
         {2,1}
     };
 
-    ++counter[number];
-    if(cache.find(number) == end(cache))
+    for(int i = 3; i <= number; i++)
     {
-        cache[number] = fibonacci(number-1) + fibonacci(number-2);
+        cache[i] = cache[i-1] + cache[i-2];
     }
 
     return cache[number];
