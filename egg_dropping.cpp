@@ -1,6 +1,7 @@
 #include <iostream>
 #include <limits>
 #include <algorithm>
+#include <sstream>
 using namespace std;
 
 
@@ -21,13 +22,14 @@ unsigned int GetOptimumAttempts(unsigned int no_of_floors, unsigned int number_o
         if( attempts < min_num_attempts)
         {
             min_num_attempts = attempts;
-        }
-            
+        }   
     }
     return min_num_attempts;
 }
 
-int main()
+int main(int argc, char** argv)
 {
-    cout << " The attempts =" << GetOptimumAttempts(100,2) << endl;
+    int num_of_attemps = GetOptimumAttempts(20,3);
+    cout << "# of attempts for 20 floors and 3 eggs = " << num_of_attemps <<endl;
+    return 0;
 }

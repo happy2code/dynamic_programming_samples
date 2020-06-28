@@ -36,5 +36,5 @@ unsigned int GetOptimumAttempts(unsigned int no_of_floors, unsigned int number_o
 
 int main()
 {
-    cout << " The attempts =" << GetOptimumAttempts(100,2) << endl;
+    cout << "The number of attempts with 100 floors and 2 eggs = " << GetOptimumAttempts(100,2) << endl;
 }
